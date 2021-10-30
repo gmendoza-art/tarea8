@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea 8</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p><strong>Gari Lester Mendoza Bedoya 7690-17-14228</strong></p>
+<h1 id="análisis-forense-de-disco-de-prueba">Análisis forense de disco de prueba</h1>
+<p>Para el análisis forense lo primero que se realizo es descargar una copia de un disco para analizarla, luego de eso se ingreso a la aplicación de Autopsy en Kali Linux</p>
+<p>Descargar el archivo .dd que se analizara de la siguiente pagina<br>
+<img src="https://i.ibb.co/R4Bhzb4/descarga-de-dd.png" alt="enter image description here"></p>
+<p><strong>Finalizado la descarga del archivo de pruebas</strong></p>
+<h2 id="análisis-del-archivo-de-prueba-utilizando-autopsy">Análisis del archivo de prueba utilizando Autopsy</h2>
+<p>Luego de eso se inicio el programa de Autopsy en Kali Linux ejecutando el comando autopsy con permisos de administrador desde linea de comandos.</p>
+<p><img src="https://i.ibb.co/X5bMM9N/Inicio-de-autopsy.png" alt="enter image description here"></p>
+<p>Lo primero que se debe de realizar es crear un Nuevo Caso en autopsy</p>
+<pre><code># Nombre del Caso
+CasoDePruebas
+# Descripción
+Pruebas forences para tarea 8
+# Investigadores
+Gari Mendoza
+</code></pre>
+<p>Lo siguiente que se debe de realizar es agregar un nuevo Host<br>
+<img src="https://i.ibb.co/TK5t0C7/Caso-de-purebas-creado.png" alt="enter image description here"></p>
+<p>Para el Host lo dejaremos por defecto utilizando el siguiente nombre</p>
+<pre><code># Host Name
+host1
+</code></pre>
+<p>Cuando ya tenemos creado el Host debemos de agregar una nueva imagen que será la que se va a analizar</p>
+<p><img src="https://i.ibb.co/DknpPYC/Agregar-nueva-imagen.png" alt="enter image description here"></p>
+<p>Para esto debemos de agregar una nueva imagen dando clic en la opción de “Add Image File”</p>
+<p><img src="https://i.ibb.co/6YXxw1W/Add-image-file.png%22" alt="enter image description here"></p>
+<p>Se debe de ingresar la locación donde se encuentra el disco que se va a analizar que seria “/home/lester/ext-part-test-2.dd”, se debe seleccionar que es un disco y seleccionaremos el método de importación “Move”</p>
+<p><img src="https://i.ibb.co/BwzVn47/Agregar-la-locaci-n-del-disco.png" alt="enter image description here"></p>
+<p>Lo primero que podemos ver al cargar el disco para ser analizado es que detecto varias particiones que serian las siguientes:</p>
+<pre><code>Particiones
+Partition 1 - C:
+Partition 2 - D:
+Partition 3 - E:
+Partition 4 - F:
+Partition 5 - G:
+Partition 6 - H:
+</code></pre>
+<p><img src="https://i.ibb.co/DDBnw4f/Particiones.png" alt="enter image description here"></p>
+<p>Para este caso seleccionamos el disco E: y daremos clic en la opción de Detalles y lo primero que debemos de hacer antes de analizar la partición es cargar los String’s para esto lo haremos utilizando los botones Extract Strings y Extract Unallocated</p>
+<p><img src="https://i.ibb.co/jVjVnSp/sin-string.png" alt="enter image description here"></p>
+<p>Cuando ha terminado de cargar los Strings entonces tendremos algo como solo siguiente:<br>
+<img src="https://i.ibb.co/yRM0hfC/con-strings.png" alt="enter image description here"></p>
+<p>El siguiente paso que se debe de realizar es analizar la partición en donde completamos los strings para eso seleccionamos la partición y damos clic en el botón de analizar<br>
+<img src="https://i.ibb.co/gWQZKCQ/analiza.png" alt="enter image description here"></p>
+<p>Lo primero que vamos a revisar será el File Analysis donde podremos ver los archivos que se encuentren en esa partición, para este caso encontramos un archivo .txt</p>
+<p><img src="https://i.ibb.co/6J3JC56/file-analisis.png" alt="enter image description here"></p>
+<p>También se tiene la opción para ver los archivos borrados al analizar en la pestaña de All Delete Files</p>
+<p><img src="https://i.ibb.co/3k8P9Yb/ver-archivos-borrados.png" alt="enter image description here"></p>
+<p>Esto nos sirve para ver todos los documentos que hayan sido borrados en la partición.<br>
+Luego se tiene la opción de File Type en esta opción lista todos los archivos separados por el tipo de archivo<br>
+<img src="https://i.ibb.co/93SthBT/File-Type.png" alt="enter image description here"></p>
+<p>Por ultimo tenemos los detalles de la imagen donde nos da los datos específicos del disco y de la partición como se puede ver en la siguiente imagen.</p>
+<p><img src="https://i.ibb.co/Xydqg9Y/Image-Ditails.png" alt="enter image description here"></p>
+</div>
+</body>
+
+</html>
